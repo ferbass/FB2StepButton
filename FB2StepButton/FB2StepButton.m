@@ -14,7 +14,7 @@
 @property (strong) UIButton *clearButton;
 - (void)setupButtons;
 - (void)setupView;
-- (void)mainButtonAction:(id)sender;
+- (void)buttonAction:(id)sender;
 @end
 
 @implementation FB2StepButton
@@ -71,7 +71,7 @@
     self.layer.cornerRadius = self.frame.size.width / 2.0;
 }
 
-- (void)mainButtonAction:(id)sender
+- (void)buttonAction:(id)sender
 {
     __block CGRect frame = self.frame;
     __block CGSize size = [self.clearButton.titleLabel.text sizeWithFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:12]];

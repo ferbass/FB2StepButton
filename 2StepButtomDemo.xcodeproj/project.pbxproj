@@ -18,7 +18,7 @@
 		E1A46DAB17E0F02100881C60 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1A46DAA17E0F02100881C60 /* Default-568h@2x.png */; };
 		E1A46DAE17E0F02100881C60 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A46DAC17E0F02100881C60 /* MainStoryboard.storyboard */; };
 		E1A46DB117E0F02100881C60 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A46DB017E0F02100881C60 /* ViewController.m */; };
-		E1A46DBA17E0F06500881C60 /* FB2StepButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A46DB917E0F06500881C60 /* FB2StepButton.m */; };
+		E1A46DBE17E0FFC800881C60 /* FB2StepButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A46DBD17E0FFC800881C60 /* FB2StepButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +38,8 @@
 		E1A46DAD17E0F02100881C60 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		E1A46DAF17E0F02100881C60 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E1A46DB017E0F02100881C60 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		E1A46DB817E0F06500881C60 /* FB2StepButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FB2StepButton.h; sourceTree = "<group>"; };
-		E1A46DB917E0F06500881C60 /* FB2StepButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FB2StepButton.m; sourceTree = "<group>"; };
+		E1A46DBC17E0FFC800881C60 /* FB2StepButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FB2StepButton.h; sourceTree = "<group>"; };
+		E1A46DBD17E0FFC800881C60 /* FB2StepButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FB2StepButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +86,7 @@
 		E1A46D9A17E0F02100881C60 /* 2StepButtomDemo */ = {
 			isa = PBXGroup;
 			children = (
-				E1A46DB717E0F06500881C60 /* FB2StepButton */,
+				E1A46DBB17E0FFC800881C60 /* FB2StepButton */,
 				E1A46DA317E0F02100881C60 /* AppDelegate.h */,
 				E1A46DA417E0F02100881C60 /* AppDelegate.m */,
 				E1A46DAC17E0F02100881C60 /* MainStoryboard.storyboard */,
@@ -111,14 +111,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E1A46DB717E0F06500881C60 /* FB2StepButton */ = {
+		E1A46DBB17E0FFC800881C60 /* FB2StepButton */ = {
 			isa = PBXGroup;
 			children = (
-				E1A46DB817E0F06500881C60 /* FB2StepButton.h */,
-				E1A46DB917E0F06500881C60 /* FB2StepButton.m */,
+				E1A46DBC17E0FFC800881C60 /* FB2StepButton.h */,
+				E1A46DBD17E0FFC800881C60 /* FB2StepButton.m */,
 			);
 			path = FB2StepButton;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -189,7 +189,7 @@
 				E1A46DA117E0F02100881C60 /* main.m in Sources */,
 				E1A46DA517E0F02100881C60 /* AppDelegate.m in Sources */,
 				E1A46DB117E0F02100881C60 /* ViewController.m in Sources */,
-				E1A46DBA17E0F06500881C60 /* FB2StepButton.m in Sources */,
+				E1A46DBE17E0FFC800881C60 /* FB2StepButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
