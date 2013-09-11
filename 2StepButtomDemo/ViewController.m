@@ -18,7 +18,7 @@
 - (void)viewDidLoad
 {
     FB2StepButton *fbButton = [[FB2StepButton alloc] initWithDelegate:self position:CGPointMake(200, 200)];
-    fbButton.slide = FB2StepButtonSlideRight;
+    fbButton.slide = FB2StepButtonSlideLeft;
     [self.view addSubview:fbButton];
     
     [super viewDidLoad];

@@ -34,7 +34,7 @@
     if (delegate && [delegate conformsToProtocol:@protocol(FB2StepButtonDelegate)]) {
         _delegate = delegate;
         _slide = FB2StepButtonSlideLeft;
-        return (self = [self initWithFrame:CGRectMake(position.x, position.y, 15, 15)]);
+        return (self = [self initWithFrame:CGRectMake(position.x, position.y, 18, 18)]);
     }
     
     return self;
@@ -44,7 +44,7 @@
 {
     self.mainButton = [[UIButton alloc ] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     [self.mainButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-    [self.mainButton setTitle:@"x" forState:UIControlStateNormal];
+    [self.mainButton setTitle:@"X" forState:UIControlStateNormal];
     self.mainButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:12];
     [self.mainButton addTarget:self action:@selector(mainButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     self.mainButton.layer.cornerRadius = self.frame.size.width / 2.0;
@@ -68,19 +68,18 @@
     self.layer.borderColor = [UIColor blackColor].CGColor;
     self.layer.borderWidth = .2;
     self.layer.cornerRadius = self.frame.size.width / 2.0;
-
 }
 
 - (void)mainButtonAction:(id)sender
 {
     __block CGRect frame = self.frame;
-
+    __block CGSize size = [self.clearButton.titleLabel.text sizeWithFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:12]];
     if (self.isClear) {
         self.isClear = NO;
         [UIView animateWithDuration:.3 animations:^{
-            frame.size.width = 15;
+            frame.size.width = frame.size.height;
             if (_slide == FB2StepButtonSlideLeft) {
-                frame.origin.x = frame.origin.x + 40;
+                frame.origin.x = frame.origin.x + size.width;
             }
             self.frame = frame;
             self.clearButton.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
@@ -93,7 +92,7 @@
         [UIView animateWithDuration:.3 animations:^{
             frame.size.width = 50;
             if (_slide == FB2StepButtonSlideLeft) {
-                frame.origin.x = frame.origin.x - 40;
+                frame.origin.x = frame.origin.x - size.width;
             }
             self.frame = frame;
             self.mainButton.transform = CGAffineTransformMakeRotation(180 * M_PI / 180);
