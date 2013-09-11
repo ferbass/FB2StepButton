@@ -42,11 +42,11 @@
 
 - (void)setupButtons
 {
-    self.mainButton = [[UIButton alloc ] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    self.mainButton = [[UIButton alloc ] initWithFrame:CGRectMake(1, 0, self.frame.size.width, self.frame.size.height)];
     [self.mainButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [self.mainButton setTitle:@"X" forState:UIControlStateNormal];
     self.mainButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:12];
-    [self.mainButton addTarget:self action:@selector(mainButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.mainButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     self.mainButton.layer.cornerRadius = self.frame.size.width / 2.0;
     [self addSubview:self.mainButton];
     
@@ -55,7 +55,7 @@
     [self.clearButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     self.clearButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:12];
     [self.clearButton setTitle:@"Clear" forState:UIControlStateNormal];
-    [self.clearButton addTarget:self action:@selector(mainButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.clearButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     self.clearButton.layer.cornerRadius = self.frame.size.width / 2.0;
     self.clearButton.alpha = 0;
     [self addSubview:self.clearButton];
