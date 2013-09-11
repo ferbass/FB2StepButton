@@ -18,13 +18,18 @@
 
 - (void)viewDidLoad
 {
-    FB2StepButton *fbButton = [[FB2StepButton alloc] initWithDelegate:self position:CGPointMake(295, 5)];
-    fbButton.slide = FB2StepButtonSlideLeft;
-    [self.barView addSubview:fbButton];
+    FB2StepButton *fbButtonRight = [[FB2StepButton alloc] initWithDelegate:self position:CGPointMake(295, 5)];
+    fbButtonRight.slide = FB2StepButtonSlideLeft;
+    [self.barView addSubview:fbButtonRight];
+    
+    FB2StepButton *fbButtonLeft = [[FB2StepButton alloc] initWithDelegate:self position:CGPointMake(5, 5)];
+    fbButtonLeft.slide = FB2StepButtonSlideRight;
+    [self.barView addSubview:fbButtonLeft];
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
+
 #pragma mark FB2StepButtonDelegate
 - (void)clickedButtonWithAction:(FB2StepButtonStep)step
 {
