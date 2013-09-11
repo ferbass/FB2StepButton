@@ -43,7 +43,7 @@
 - (void)setupButtons
 {
     self.mainButton = [[UIButton alloc ] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-    [self.mainButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    [self.mainButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [self.mainButton setTitle:@"X" forState:UIControlStateNormal];
     self.mainButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:12];
     [self.mainButton addTarget:self action:@selector(mainButtonAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -64,6 +64,7 @@
 
 - (void)setupView
 {
+    self.backgroundColor = [UIColor colorWithRed:0.159 green:0.116 blue:0.121 alpha:1.000];
     self.userInteractionEnabled = YES;
     self.layer.borderColor = [UIColor blackColor].CGColor;
     self.layer.borderWidth = .2;

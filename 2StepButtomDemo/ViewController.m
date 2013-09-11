@@ -10,6 +10,7 @@
 #import "FB2StepButton.h"
 
 @interface ViewController () <FB2StepButtonDelegate>
+@property (weak, nonatomic) IBOutlet UIView *barView;
 
 @end
 
@@ -17,9 +18,9 @@
 
 - (void)viewDidLoad
 {
-    FB2StepButton *fbButton = [[FB2StepButton alloc] initWithDelegate:self position:CGPointMake(200, 200)];
+    FB2StepButton *fbButton = [[FB2StepButton alloc] initWithDelegate:self position:CGPointMake(295, 5)];
     fbButton.slide = FB2StepButtonSlideLeft;
-    [self.view addSubview:fbButton];
+    [self.barView addSubview:fbButton];
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
