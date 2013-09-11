@@ -58,6 +58,7 @@
     [self.clearButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     self.clearButton.layer.cornerRadius = self.frame.size.width / 2.0;
     self.clearButton.alpha = 0;
+    [self.clearButton setReversesTitleShadowWhenHighlighted:YES];
     [self addSubview:self.clearButton];
     
 }
@@ -77,18 +78,8 @@
     __block CGSize size = [self.clearButton.titleLabel.text sizeWithFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:12]];
     if (self.isClear) {
         self.isClear = NO;
-        [UIView animateWithDuration:.3 animations:^{
-            frame.size.width = frame.size.height;
-            if (_slide == FB2StepButtonSlideLeft) {
-                frame.origin.x = frame.origin.x + size.width;
-            }
-            self.frame = frame;
-            self.clearButton.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-            self.clearButton.alpha = 0;
-            self.mainButton.transform = CGAffineTransformMakeRotation(0);
-            self.mainButton.alpha = 1;
-            [_delegate clickedButtonWithAction:FBButtonActionClear];
-        }];
+        [_delegate clickedButtonWithAction:FBButtonActionClear];
+        [self resetButton];
     }else{
         [UIView animateWithDuration:.3 animations:^{
             frame.size.width = 50;
@@ -105,6 +96,24 @@
         }];
         self.isClear = YES;
     }
+}
+
+- (void)resetButton
+{
+    __block CGRect frame = self.frame;
+    __block CGSize size = [self.clearButton.titleLabel.text sizeWithFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:12]];
+    [UIView animateWithDuration:.3 animations:^{
+        frame.size.width = frame.size.height;
+        if (_slide == FB2StepButtonSlideLeft) {
+            frame.origin.x = frame.origin.x + size.width;
+        }
+        self.frame = frame;
+        self.clearButton.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+        self.clearButton.alpha = 0;
+        self.mainButton.transform = CGAffineTransformMakeRotation(0);
+        self.mainButton.alpha = 1;
+        [_delegate clickedButtonWithAction:FBButtonActionClear];
+    }];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -26,6 +26,7 @@ typedef enum
 
 @interface FB2StepButton : UIView
 - (id)initWithDelegate:(id <FB2StepButtonDelegate>)delegate position:(CGPoint)position;
+- (void)resetButton;
 @property (strong) id<FB2StepButtonDelegate> delegate;
 @property (nonatomic) BOOL isClear;
 @property (nonatomic) FB2StepButtonSlide slide;
