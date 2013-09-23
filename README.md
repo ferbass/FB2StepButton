@@ -23,10 +23,12 @@
 @interface ViewController () <FB2StepButtonDelegate>
 ```
 
+* basic implementation of button on view
+
 ```objective-c
     FB2StepButton *fbButtonRight = [[FB2StepButton alloc] initWithDelegate:self position:CGPointMake(295, 5)];
     fbButtonRight.slide = FB2StepButtonSlideLeft;
-    [self.barView addSubview:fbButtonRight];
+    [self.view addSubview:fbButtonRight];
 ```
 
 * implemente a delegate
