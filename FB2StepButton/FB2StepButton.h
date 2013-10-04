@@ -21,7 +21,7 @@ typedef enum
 } FB2StepButtonSlide;
 
 @protocol FB2StepButtonDelegate <NSObject>
-- (void)clickedButtonWithAction:(FB2StepButtonStep)step;
+- (void)clickedButtonWithAction:(FB2StepButtonStep)step sender:(id)sender;
 @end
 
 @interface FB2StepButton : UIView

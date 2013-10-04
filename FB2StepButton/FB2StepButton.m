@@ -78,8 +78,7 @@
     __block CGSize size = [self.clearButton.titleLabel.text sizeWithFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:12]];
     if (self.isClear) {
         self.isClear = NO;
-        [_delegate clickedButtonWithAction:FBButtonActionClear];
-        [self resetButton];
+        [_delegate clickedButtonWithAction:FBButtonActionClear sender:self];
     }else{
         [UIView animateWithDuration:.3 animations:^{
             frame.size.width = 50;
@@ -90,7 +89,7 @@
             self.mainButton.transform = CGAffineTransformMakeRotation(180 * M_PI / 180);
             self.mainButton.alpha = 0;
             self.clearButton.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-            [_delegate clickedButtonWithAction:FB2StepButtonStepTap];
+            [_delegate clickedButtonWithAction:FB2StepButtonStepTap sender:self];
         }completion:^(BOOL finished) {
             self.clearButton.alpha = 1;
         }];
@@ -112,7 +111,7 @@
         self.clearButton.alpha = 0;
         self.mainButton.transform = CGAffineTransformMakeRotation(0);
         self.mainButton.alpha = 1;
-        [_delegate clickedButtonWithAction:FBButtonActionClear];
+        [_delegate clickedButtonWithAction:FBButtonActionClear sender:self];
     }];
 }
 /*
