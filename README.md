@@ -39,7 +39,8 @@
 
 ```objective-c
 #pragma mark FB2StepButtonDelegate
-- (void)clickedButtonWithAction:(FB2StepButtonStep)step
+
+- (void)clickedButtonWithAction:(FB2StepButtonStep)step sender:(id)sender
 {
     NSLog(@"%d", step);
     //do anything
